@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wrapper {
+    width: 400px;
+    height: 450px;
+    background-color: #ebeaea;
+    border-radius: 10px;
+    /* display: flex;
+    overflow: hidden;
+    flex-direction: column; */
+}
+
+.game-details {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.play-field {
+    max-width: 100%;
+    height: 400px;
+    background-color: black;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.food {
+    background-color: red;
+    border-radius: 50%;
+    animation: foodAnimation 0.3s linear infinite;
+}
+
+.head {
+    background: linear-gradient(to right, #e2a706, #0339ec);
+    /* border-radius: 4px; */
+}
+
+.head:nth-child(2) {
+    background: #c8ff00;
+    position: relative;
+}
+.head:nth-child(2)::after {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+}
+.head:nth-child(2)::before {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: black;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+}
+
+
+@keyframes foodAnimation {
+    100% {
+        background-color: #72f507;
+    }
+}
